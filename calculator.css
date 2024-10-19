@@ -1,0 +1,161 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}  
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(to bottom, #0a3152, #960535);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.bubbles{
+     width: 100%;
+     display: flex;
+     justify-content: space-around;
+     position: absolute;
+     bottom: -130px;
+}
+.bubbles span{
+    width: 80px;
+    height: 80px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    animation: move 10s linear infinite;
+    position: relative;
+    overflow: hidden;
+}
+
+@keyframes move {
+    100%{
+        transform: translateY(-130vh);
+    }
+}
+
+.bubbles span.one{
+    animation-delay: 2.2s;
+    transform: scale(2.15);
+}
+.bubbles span.two{
+    animation-delay: 3.5s;
+    transform: scale(1.55);
+}
+.bubbles span.three{
+    animation-delay: 0.2s;
+    transform: scale(0.45);
+}
+.bubbles span.four{
+    animation-delay: 6s;
+    transform: scale(2.15);
+}
+.bubbles span.five{
+    animation-delay: 7s;
+    transform: scale(0.5);
+}
+.bubbles span.six{
+    animation-delay: 4s;
+    transform: scale(2.5);
+}
+.bubbles span.seven{
+    animation-delay: 3s;
+    transform: scale(1.5);
+}
+.bubbles span:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.1);
+    height: 80px;
+    width: 40%;
+    transform: skew(45deg) translateX(150px);
+    animation: mirror 3s linear infinite;
+}
+
+@keyframes mirror {
+    100%{
+        transform: translateX(-450px);
+    }
+    
+}
+
+.bubbles span.one:before{
+    animation-delay: 1.5s;
+}
+.bubbles span.two:before{
+    animation-delay: 3.5s;
+}
+.bubbles span.three:before{
+    animation-delay: 2.5s;
+}
+.bubbles span.four:before{
+    animation-delay: 7.5s;
+}
+.bubbles span.five:before{
+    animation-delay: 4.5s;
+}
+.bubbles span.six:before{
+    animation-delay: 0.5s;
+}
+.bubbles span.seven:before{
+    animation-delay: 6s;
+}
+
+
+.container{
+    /* width: 20%; */
+    padding: 20px;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(5px);
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+}
+#calculator{
+    background-color: transparent;
+    /* padding: 20px; */
+    border-radius: 10px;
+
+}
+#calculator .key button{
+    width: 23%;
+    padding: 30px 30px;
+    margin: 0 10px;
+    border: none;
+    background-color: transparent;
+    font-size: 25px;
+    color: white;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+#calculator .key button:focus-within{
+    scale: 1.1;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.btn{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.key .display{
+    background-color: transparent;
+    display: flex;
+    height: 80px;
+}
+
+.key .display #display{
+    text-align: right;
+    flex: 1;
+    font-size: 25px;
+    box-shadow: none;
+    border: none;
+    color: black;
+    background-color: transparent;
+}
